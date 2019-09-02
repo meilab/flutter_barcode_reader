@@ -42,9 +42,9 @@
                              views:@{@"scanRect": _scanRect}]];
   [_scanRect startAnimating];
     self.scanner = [[MTBBarcodeScanner alloc] initWithPreviewView:_previewView];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消"
+                                                                        style:UIBarButtonItemStylePlain
                                                                         target:self action:@selector(cancel)];
-    self.navigationItem.leftBarButtonItem.title = @"取消";
   [self updateFlashButton];
 }
 
@@ -84,7 +84,7 @@
 }
 
 - (void)cancel {
-    [self.delegate barcodeScannerViewController:self didFailWithErrorCode:@"USER_CANCELED"];
+    // [self.delegate barcodeScannerViewController:self];
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
