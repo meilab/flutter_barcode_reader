@@ -84,7 +84,7 @@
 }
 
 - (void)cancel {
-    // [self.delegate barcodeScannerViewController:self];
+    [self.delegate barcodeScannerViewController:self didFailWithErrorCode:@"USER_CANCELED"];
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
